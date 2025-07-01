@@ -1,0 +1,11 @@
+First need to generate monthly, CMOR(like) files, ncrcat-ted for period 1950-2014, and make sure the path for these matches that in the basic_annual_cycle_param file below
+monthly_means_ncrcat.py
+
+# Calculate mean climatologies, need to edit /home/users/malcolm.roberts/workspace/tenten/variability/pmp/mean_pmp/basic_annual_cycle_param_resol.py
+pmp_calc_means.sh
+
+# Calculate biases against obs, need to edit /home/users/malcolm.roberts/workspace/tenten/variability/pmp/mean_pmp/basic_param_resol.py
+pmp_means_metrics.sh
+
+# plot metrics
+portrait_plot_mean_clim_resol.py

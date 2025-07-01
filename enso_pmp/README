@@ -1,0 +1,20 @@
+Need monthly, CMOR-like files for e.g. historical (1850-2014) for variables:
+ts, tas, pr, tauu
+
+as well as land-sea mask
+sftlf_*
+
+# Run ENSO metrics packages with this (need to edit for model name/resolution)
+run_enso_pmp.sh
+
+It calls (contains lots of paths)
+pmp_metrics_enso.py
+
+and uses this configuration file (which contains the template path to the model data)
+basic_enso_param_MO_model.py.in
+
+
+Code
+convert_pp_to_cmorish.py
+
+is some code to convert pp to (close-to) CMOR format which seems to work with PMP.

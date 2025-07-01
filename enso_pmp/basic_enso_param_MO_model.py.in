@@ -1,0 +1,32 @@
+import os
+
+#
+#  OPTIONS ARE SET BY USER IN THIS FILE AS INDICATED BELOW BY:
+#
+#
+
+# MODELS
+#modnames = ['di356']
+modnames = ['$MODEL_NAME$']
+mip = 'cmip6'  # cmip5, cmip6
+exp = 'historical'  # historical, piControl
+realization = 'r1i1p1f1'
+modpath = '$INPUT_DIR$/EERIE_data/%(variable)_Amon_%(model)_%(exp)_%(realization)_gn_185001-201412.nc'
+
+modpath_lf = '$INPUT_DIR$/EERIE_data/sftlf_fx_%(model)_amip_r1i1p1f1.nc'
+
+# OBSERVATIONS
+obs_cmor = True
+obs_cmor_path = "$INPUT_DIR$/demo_data/obs4MIPs_PCMDI_monthly"
+obs_catalogue = "/data/users/malcolm.roberts/git/pcmdi_metrics/doc/jupyter/Demo/demo_data/obs4MIPs_PCMDI-CEM2021_monthly_bySource_catalogue_v20210805_demo.json"
+
+# METRICS COLLECTION
+metricsCollection = 'ENSO_perf'  # ENSO_perf, ENSO_tel, ENSO_proc
+
+# OUTPUT
+case_id = 'basicTestEnso'
+results_dir = os.path.join('$OUTPUT_DIR$',case_id, metricsCollection)
+
+json_name = '%(mip)_%(exp)_%(metricsCollection)_%(case_id)_%(model)_%(realization)'
+netcdf_name = json_name
+nc_out = True
